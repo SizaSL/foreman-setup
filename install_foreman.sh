@@ -2,6 +2,7 @@
 
 # Initial setup
 echo "192.168.1.11 foreman.server.local foreman" >> /etc/hosts
+echo "192.168.1.12 foreman.client.local client" >> /etc/hosts
 sudo hostnamectl set-hostname foreman.server.local
 
 # Install Puppet
@@ -15,4 +16,4 @@ sudo yum -y install https://yum.theforeman.org/releases/1.23/el7/x86_64/foreman-
 sudo yum -y install foreman-installer
 
 # Run installer
-sudo foreman-installer
+sudo foreman-installer -i
