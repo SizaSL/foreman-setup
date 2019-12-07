@@ -16,3 +16,5 @@ sudo echo 'environment = production' >> /etc/puppetlabs/puppet/puppet.conf
 sudo echo 'listen = false' >> /etc/puppetlabs/puppet/puppet.conf
 sudo echo 'pluginsync = true' >> /etc/puppetlabs/puppet/puppet.conf
 sudo echo 'report = true ' >> /etc/puppetlabs/puppet/puppet.conf
+
+sudo /opt/puppetlabs/puppet/bin/puppet agent -t
