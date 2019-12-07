@@ -85,7 +85,7 @@ Vagrant.configure("2") do |config|
       vb.memory = "1024"
       vb.cpus = 1
     end
-    client.vm.provision "shell", path: "setup_puppet_agent.sh", args:[client.vm.provider.name]
+    client.vm.provision "shell", path: "setup_puppet_agent.sh", args:["client"]
   end
   
   config.vm.define "razor" do |razor|
@@ -171,7 +171,7 @@ Vagrant.configure("2") do |config|
       vb.memory = "1024"
       vb.cpus = 1
     end
-    vpn.vm.provision "shell", path: "setup_puppet_agent.sh", args:[client.vm.provider.name]
+    vpn.vm.provision "shell", path: "setup_puppet_agent.sh", args:["vpn"]
   end
 
 end
