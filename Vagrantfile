@@ -1,7 +1,10 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
+NETWORK_INTERFACE = 'Realtek USB GbE Family Controller'
+
 Vagrant.configure("2") do |config|
+  
   config.vm.define "foreman" do |foreman|
     # Every Vagrant development environment requires a box. You can search for
     # boxes at https://vagrantcloud.com/search.
@@ -31,7 +34,7 @@ Vagrant.configure("2") do |config|
     # Create a public network, which generally matched to bridged network.
     # Bridged networks make the machine appear as another physical device on
     # your network.
-    foreman.vm.network "public_network", ip: "192.168.1.11"
+    foreman.vm.network "public_network", ip: "192.168.1.11", bridge: NETWORK_INTERFACE
     
     foreman.vm.provider "virtualbox" do |vb|
       # Display the VirtualBox GUI when booting the machine
@@ -74,7 +77,7 @@ Vagrant.configure("2") do |config|
     # Create a public network, which generally matched to bridged network.
     # Bridged networks make the machine appear as another physical device on
     # your network.
-    client.vm.network "public_network", ip: "192.168.1.12"
+    client.vm.network "public_network", ip: "192.168.1.12", bridge: NETWORK_INTERFACE
     
     client.vm.provider "virtualbox" do |vb|
       # Display the VirtualBox GUI when booting the machine
@@ -117,7 +120,7 @@ Vagrant.configure("2") do |config|
     # Create a public network, which generally matched to bridged network.
     # Bridged networks make the machine appear as another physical device on
     # your network.
-    razor.vm.network "public_network", ip: "192.168.1.11"
+    razor.vm.network "public_network", ip: "192.168.1.11", bridge: NETWORK_INTERFACE
     
     razor.vm.provider "virtualbox" do |vb|
       # Display the VirtualBox GUI when booting the machine
@@ -160,7 +163,7 @@ Vagrant.configure("2") do |config|
     # Create a public network, which generally matched to bridged network.
     # Bridged networks make the machine appear as another physical device on
     # your network.
-    vpn.vm.network "public_network", ip: "192.168.1.13"
+    vpn.vm.network "public_network", ip: "192.168.1.13", bridge: NETWORK_INTERFACE
     
     vpn.vm.provider "virtualbox" do |vb|
       # Display the VirtualBox GUI when booting the machine
